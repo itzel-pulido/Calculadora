@@ -1,0 +1,143 @@
+/* Paleta de colores */
+:root {
+    --rosa-magenta: #C832A9;
+    --verde-lima: #B8D957;
+    --rosa-pastel: #FBE8FA;
+    --fondo-pagina: #FFF7FD;
+    --texto-oscuro: #352238;
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fondo-pagina);
+    color: var(--texto-oscuro);
+}
+
+/* Contenedor principal */
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 24px;
+}
+
+/* Título de la calculadora */
+h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--rosa-magenta);
+}
+
+/* Cuerpo de la calculadora */
+#calculadora {
+    width: 100%;
+    max-width: 340px;
+    padding: 24px;
+    background-color: var(--rosa-pastel);
+    border: 2px solid var(--rosa-magenta);
+    border-radius: 22px;
+    box-shadow: 0 8px 20px rgba(200, 50, 169, 0.15);
+    box-sizing: border-box;
+}
+
+/* Pantalla de operaciones */
+#pantalla {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 18px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid var(--rosa-magenta);
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    color: var(--texto-oscuro);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    outline: none;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+/* Distribución de los botones */
+#botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Estilo general de todos los botones */
+.btn {
+    min-width: 0;
+    height: 55px;
+    border: none;
+    border-radius: 12px;
+    font-size: 21px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+/* Botones números */
+.numero {
+    background-color: #FFFFFF;
+    color: var(--texto-oscuro);
+    border: 1px solid #E8C9E5;
+}
+
+/* Botones operaciones */
+.operacion {
+    background-color: var(--rosa-magenta);
+    color: #FFFFFF;
+}
+
+/* Botón limpiar */
+.limpiar {
+    background-color: var(--rosa-pastel);
+    color: var(--rosa-magenta);
+    border: 2px solid var(--rosa-magenta);
+}
+
+/* Botón resultado */
+.resultado {
+    background-color: var(--verde-lima);
+    color: #26320B;
+}
+
+/* Efecto pasar cursor */
+.btn:hover {
+    filter: brightness(0.94);
+    transform: translateY(-2px);
+}
+
+/* Efecto presionar botón */
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Ajustes pantallas pequeñas */
+@media (max-width: 380px) {
+    #calculadora {
+        padding: 16px;
+    }
+
+    .btn {
+        height: 48px;
+        font-size: 18px;
+    }
+}
+
+/* Centrar el mensaje de error */
+#pantalla.mensaje-error {
+    text-align: center;
+    font-size: 16px;
+}
